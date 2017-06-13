@@ -71,7 +71,22 @@ RUN conda install --quiet --yes \
     notebook \
     jupyterhub \
     jupyterlab \
+    jupyterlab \
     && conda clean -tipsy
+
+# install nbextensions
+RUN conda install -c conda-forge --quiet --yes \
+    jupyter_contrib_nbextensions \
+    jupyter_nbextensions_configurator \
+    && conda clean -tipsy
+
+# enable nbextensions
+RUN jupyter nbextensions_configurator enable --user \
+    && jupyter nbextension enable toc2/main \
+    && jupyter nbextension enable code_prettify/autopep8
+
+RUN pip install --no-cache-dir -U \
+    autopep8
 
 USER root
 

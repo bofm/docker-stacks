@@ -5,6 +5,12 @@
 
 Opinionated stacks of ready-to-run Jupyter applications in Docker.
 
+# CHANGED in this fork:
+
+1. Miniconda latest with Python 3.6
+2. Latest Jupyter + Hub + Notebook
+3. nbextensions + autopep8
+
 ## Quick Start
 
 If you're familiar with Docker, have it configured, and know exactly what you'd like to run, this one-liner should work in most cases:
